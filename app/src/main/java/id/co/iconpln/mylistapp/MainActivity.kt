@@ -9,4 +9,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
+    fun getDataHero(): Array<String> {
+        val hero = arrayOf(
+            "Cut Nyak Dien",
+            "Ki Hajar Dewantara",
+            "Moh Yamin",
+            "Soekarno",
+            "Moh Hatta",
+            "R.A Kartini"
+        )
+        return hero
+    }
 }
