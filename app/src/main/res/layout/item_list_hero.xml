@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivHeroImage"
+        android:layout_width="150dp"
+        android:layout_height="220dp"
+        android:background="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_toEndOf="@+id/ivHeroImage"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:text="Hero Name"/>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A hero is a real person or a main fictional character of a literary work who, in the face of danger, combats adversity through feats of ingenuity, courage, or strength; the original hero type of classical epics did such things for the sake of glory and honor."
+        android:layout_toEndOf="@+id/ivHeroImage"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="5"
+        android:textSize="18dp"
+        android:layout_below="@+id/tvTitle" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="SHARE"
+        android:layout_toEndOf="@+id/ivHeroImage"
+        android:layout_below="@+id/tvDescription"
+        android:background="@color/colorPrimary"/>
+
+
+
+</RelativeLayout>
