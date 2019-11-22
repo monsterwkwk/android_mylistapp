@@ -1,6 +1,7 @@
 package id.co.iconpln.mylistapp
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
@@ -9,7 +10,14 @@ import android.widget.TextView
 
 class ListViewHeroAdapter(val context: Context, val listHero: ArrayList<Hero>):BaseAdapter() {
     override fun getView(index: Int, view: View?, viewGroup: ViewGroup?): View {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val viewLayout = LayoutInflater.from(context)
+            .inflate(R.layout.item_list_hero, viewGroup, false)
+
+        val viewHolder = ViewHolder(viewLayout)
+        val hero = getItem(index) as Hero
+        viewHolder.bind(context, hero)
+
+        return viewLayout
     }
 
     override fun getItem(index: Int): Any {
