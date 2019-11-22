@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 
 class ListViewHeroAdapter(val context: Context, val listHero: ArrayList<Hero>):BaseAdapter() {
     override fun getView(index: Int, view: View?, viewGroup: ViewGroup?): View {
@@ -40,6 +41,9 @@ class ListViewHeroAdapter(val context: Context, val listHero: ArrayList<Hero>):B
         fun bind(context: Context, hero: Hero) {
             tvHeroName.text = hero.name
             tvHeroDesciption.text = hero.desc
+            Glide.with(context)
+                .load(hero.photo)
+                .into(ivHeroPhoto)
         }
     }
 
