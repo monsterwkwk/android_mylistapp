@@ -11,6 +11,7 @@ object HeroesData {
                 hero.name = data[0]
                 hero.desc = data[1]
                 hero.photo = data[2]
+                list.add(hero)
             }
             return list
         }
