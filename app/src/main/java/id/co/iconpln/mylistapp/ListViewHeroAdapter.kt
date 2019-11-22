@@ -28,6 +28,11 @@ class ListViewHeroAdapter(val context: Context, val listHero: ArrayList<Hero>):B
         private val tvHeroName: TextView = view.findViewById(R.id.tvTitle)
         private val tvHeroDesciption: TextView = view.findViewById(R.id.tvDescription)
         private val ivHeroPhoto: ImageView = view.findViewById(R.id.ivHeroImage)
+
+        fun bind(context: Context, hero: Hero) {
+            tvHeroName.text = hero.name
+            tvHeroDesciption.text = hero.desc
+        }
     }
 
 }
