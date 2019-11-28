@@ -24,7 +24,8 @@
                 android:id="@+id/tvHeroDetailName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/base"
                 android:text="@string/hero_name"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
