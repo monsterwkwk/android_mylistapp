@@ -1,6 +1,7 @@
 package id.co.iconpln.mylistapp
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -27,8 +28,18 @@ class MainActivity : AppCompatActivity() {
         listView.onItemClickListener = object : AdapterView.OnItemClickListener {
             override fun onItemClick(adapterView: AdapterView<*>?, view: View?, index: Int, l: Long) {
                 Toast.makeText(this@MainActivity, "You choose: ${list[index].name}", Toast.LENGTH_LONG).show()
+                showDetailHero(list[index])
             }
         }
+    }
+
+    private  fun showDetailHero(hero: Hero) {
+        val detailHeroIntent = Intent(this, DetailHeroActivity::class.java)
+        // sending data
+        detailHeroIntent.putExtra(DetailHeroActivity.EXTRA_NAME, hero.name)
+        detailHeroIntent.putExtra(DetailHeroActivity.EXTRA_DESC, hero.desc)
+        detailHeroIntent.putExtra(DetailHeroActivity.EXTRA_IMAGE_URL, hero.photo)
+        startActivity(detailHeroIntent)
     }
 
     fun loadArrayAdapter() {
