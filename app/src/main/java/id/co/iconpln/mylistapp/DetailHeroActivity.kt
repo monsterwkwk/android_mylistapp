@@ -3,6 +3,7 @@ package id.co.iconpln.mylistapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.activity_detail_hero.*
 
 class DetailHeroActivity : AppCompatActivity() {
@@ -25,6 +26,12 @@ class DetailHeroActivity : AppCompatActivity() {
         tvHeroDetailDesc.text = intent.getStringExtra(EXTRA_DESC)
         Glide.with(this)
             .load(intent.getStringExtra(EXTRA_IMAGE_URL))
+            .apply(
+                RequestOptions()
+                    .centerCrop()
+                    .placeholder(R.drawable.ic_launcher_foreground)
+                    .error(R.drawable.ic_launcher_foreground)
+            )
             .into(ivHeroDetailImage)
     }
 }
