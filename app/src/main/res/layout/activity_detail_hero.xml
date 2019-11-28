@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="4dp"
-    tools:context=".DetailHeroActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvHeroDetailName"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/hero_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:layout_height="match_parent"
+        android:padding="4dp"
+        tools:context=".DetailHeroActivity">
 
-    <ImageView
-        android:id="@+id/ivHeroDetailImage"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_below="@+id/tvHeroDetailName"
-        android:scaleType="centerInside"
-        android:src="@drawable/ic_launcher_foreground" />
+        <TextView
+            android:id="@+id/tvHeroDetailName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/hero_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    <TextView
-        android:id="@+id/tvHeroDetailDesc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ivHeroDetailImage"
-        android:text="@string/hero_description"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        <ImageView
+            android:id="@+id/ivHeroDetailImage"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@+id/tvHeroDetailName"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_launcher_foreground" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tvHeroDetailDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivHeroDetailImage"
+            android:text="@string/hero_description"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    </RelativeLayout>
+
+</ScrollView>
