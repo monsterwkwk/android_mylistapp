@@ -2,6 +2,7 @@ package id.co.iconpln.mylistapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.activity_detail_hero.*
@@ -39,5 +40,17 @@ class DetailHeroActivity : AppCompatActivity() {
                     .error(R.drawable.ic_launcher_foreground)
             )
             .into(ivHeroDetailImage)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> {
+                false
+            }
+        }
     }
 }
