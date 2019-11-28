@@ -3,8 +3,11 @@ package id.co.iconpln.mylistapp
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +19,16 @@ class MainActivity : AppCompatActivity() {
 
         //loadArrayAdapter()
         loadListBaseAdapter(this)
+        setListItemClickListener(lvListHero)
+    }
+
+
+    private fun setListItemClickListener(listView: ListView) {
+        listView.onItemClickListener = object : AdapterView.OnItemClickListener {
+            override fun onItemClick(adapterView: AdapterView<*>?, view: View?, index: Int, l: Long) {
+                Toast.makeText(this@MainActivity, "You choose: ${list[index].name}", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
     fun loadArrayAdapter() {
