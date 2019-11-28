@@ -19,6 +19,12 @@ class DetailHeroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail_hero)
 
         displayHeroDetail()
+        setupActionbar()
+    }
+
+    private fun setupActionbar() {
+        supportActionBar?.title = "Detail Hero"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun displayHeroDetail() {
