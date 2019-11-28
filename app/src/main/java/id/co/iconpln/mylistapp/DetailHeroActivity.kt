@@ -2,6 +2,8 @@ package id.co.iconpln.mylistapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.activity_detail_hero.*
 
 class DetailHeroActivity : AppCompatActivity() {
 
@@ -14,5 +16,15 @@ class DetailHeroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_hero)
+
+        displayHeroDetail()
+    }
+
+    private fun displayHeroDetail() {
+        tvHeroDetailName.text = intent.getStringExtra(EXTRA_NAME)
+        tvHeroDetailDesc.text = intent.getStringExtra(EXTRA_DESC)
+        Glide.with(this)
+            .load(intent.getStringExtra(EXTRA_IMAGE_URL))
+            .into(ivHeroDetailImage)
     }
 }
