@@ -29,19 +29,18 @@ class DetailHeroActivity : AppCompatActivity() {
     }
 
     private fun displayHeroDetail() {
-        val bundle = intent.extras
-
         // using intent
         //tvHeroDetailName.text = intent.getStringExtra(EXTRA_NAME)
         //tvHeroDetailDesc.text = intent.getStringExtra(EXTRA_DESC)
+        //.load(intent.getStringExtra(EXTRA_IMAGE_URL))
 
         // using bundle
-        tvHeroDetailName.text = bundle?.getString(EXTRA_NAME) ?: ""
-        tvHeroDetailDesc.text = bundle?.getString(EXTRA_DESC) ?: ""
+        val bundle = intent.extras
+        tvHeroDetailName.text = bundle?.getString(EXTRA_NAME)
+        tvHeroDetailDesc.text = bundle?.getString(EXTRA_DESC)
 
         Glide.with(this)
-            //.load(intent.getStringExtra(EXTRA_IMAGE_URL))
-            .load(bundle?.getString(EXTRA_IMAGE_URL)?: "")
+            .load(bundle?.getString(EXTRA_IMAGE_URL))
             .apply(
                 RequestOptions()
                     .centerCrop()

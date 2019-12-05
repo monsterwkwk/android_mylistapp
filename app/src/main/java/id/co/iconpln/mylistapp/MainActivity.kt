@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     private  fun showDetailHero(hero: Hero) {
         val detailHeroIntent = Intent(this, DetailHeroActivity::class.java)
-        
+
         // sending data using intent
         // detailHeroIntent.putExtra(DetailHeroActivity.EXTRA_NAME, hero.name)
         // detailHeroIntent.putExtra(DetailHeroActivity.EXTRA_DESC, hero.desc)
